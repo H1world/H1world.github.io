@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: yifNote
 subtitle:
 description:
-author: John Doe
-language:
+author: yifan Guo
+language: zh-Hans
+avatar: http://iconfont.alicdn.com/t/1484640112542.jpg@100h_100w.jpg
 timezone:
 
 # URL
@@ -72,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

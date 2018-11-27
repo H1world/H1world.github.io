@@ -160,7 +160,10 @@ $line-numbers
 
   li:hover
     background-color: #2E2E2E
-
+  .jsx.highlight::before
+    content: attr(data-lang) " Jsx"
+  .js.highlight::before
+    content: attr(data-lang) " Js"
   .highlight::before
     content: attr(data-lang) " code"
     display: block

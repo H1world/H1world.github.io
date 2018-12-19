@@ -1,6 +1,6 @@
 ---
-title: aboutme
+title: 关于
 date: 2017-12-20 14:48:09
 ---
 <!--more-->
-I like batman
+.佛性记录.

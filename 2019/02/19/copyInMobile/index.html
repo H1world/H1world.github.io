@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Vue手动清空keepalive | yifNote</title>
+  <title>Js点击复制文本 | yifNote</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue如何手动清空keepAlive.">
-<meta name="keywords" content="前端,Vue">
+  <meta name="description" content="Js适用于移动端的点击复制（Android/IOS）">
+<meta name="keywords" content="前端,Js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue手动清空keepalive">
-<meta property="og:url" content="http://yoursite.com/2019/01/16/Vue手动清空keepalive/index.html">
+<meta property="og:title" content="Js点击复制文本">
+<meta property="og:url" content="http://yoursite.com/2019/02/19/copyInMobile/index.html">
 <meta property="og:site_name" content="yifNote">
-<meta property="og:description" content="Vue如何手动清空keepAlive.">
+<meta property="og:description" content="Js适用于移动端的点击复制（Android/IOS）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-17T08:15:11.304Z">
+<meta property="og:updated_time" content="2019-02-19T07:51:54.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue手动清空keepalive">
-<meta name="twitter:description" content="Vue如何手动清空keepAlive.">
+<meta name="twitter:title" content="Js点击复制文本">
+<meta name="twitter:description" content="Js适用于移动端的点击复制（Android/IOS）">
   
     <link rel="alternative" href="/atom.xml" title="yifNote" type="application/atom+xml">
   
@@ -182,11 +182,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Vue手动清空keepalive" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-copyInMobile" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/01/16/Vue手动清空keepalive/" class="article-date">
-      <time datetime="2019-01-16T02:55:48.000Z" itemprop="datePublished">2019-01-16</time>
+      <a href="/2019/02/19/copyInMobile/" class="article-date">
+      <time datetime="2019-02-19T07:41:46.000Z" itemprop="datePublished">2019-02-19</time>
 </a>
     </div>
   
@@ -199,7 +199,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Vue手动清空keepalive
+      Js点击复制文本
     </h1>
   
 
@@ -214,7 +214,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -224,11 +224,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>  Vue如何手动清空keepAlive.<br><a id="more"></a></p>
-<h3 id="运用场景"><a href="#运用场景" class="headerlink" title="运用场景"></a>运用场景</h3><p>入职新公司，领导安排一个项目：重构控制台。<br>大致需求如下：此控制台的一切配置，全部通过后台传入的json数据类型控制。譬如身份验证、导航栏、主导航栏、页面组件、小组件、大组件…</p>
-<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><p>在确认需求之后，想一下需要做哪些事。首先我需要实现将所有能运用到的前端应用、组件封装好。然后通过一套规则，读取后台传入的配置：路由、身份、组件、接口等等。<br>Vue很符合这个需求，首先Vue提供addRouter可以用来动态生成路由、其次keepalive可以模拟传统的iframe，并且Vue非常轻便，相比react所有事情都需要手写，工作量大大缩短。</p>
-<h3 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h3><p>1、封装组件：将小组件譬如input、button、table、select等经常会在控制台运用到的。<br>2、使用缓存组件模拟iframe。<br>3、制定规则，获取自个儿需要的参数，用来生成自己想要的路由或者组件。<br>4、配置信息告诉路由名、物理路径等信息之后，需要手动创建组件，撰写Vue组件。这一点暂时没想到好的方法代替。</p>
-<h3 id="keepAlive如何手动清空"><a href="#keepAlive如何手动清空" class="headerlink" title="keepAlive如何手动清空"></a>keepAlive如何手动清空</h3><p>在Vue官网文档内并未提供手动清空keepalive的方法，我也是网上搜了一些资料，并不能确定这样是真正意义上的从内存中清空。以下贴入清空keepalive关键代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//入口文件 Main.js 通过路由守卫判断。</span></span><br><span class="line">Vue.mixin(&#123;</span><br><span class="line">  beforeRouteLeave: <span class="function"><span class="keyword">function</span> (<span class="params">to, from, next</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">from</span> &amp;&amp; <span class="keyword">from</span>.meta.remove) &#123; <span class="comment">// remove是用来判断需要清空的路由。</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.$vnode &amp;&amp; <span class="keyword">this</span>.$vnode.data.keepAlive) &#123; <span class="comment">// 一层层获取获取keepalive</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.$vnode.parent &amp;&amp; <span class="keyword">this</span>.$vnode.parent.componentInstance &amp;&amp; <span class="keyword">this</span>.$vnode.parent.componentInstance.cache) &#123;</span><br><span class="line">          <span class="keyword">if</span> (<span class="keyword">this</span>.$vnode.componentOptions) &#123;</span><br><span class="line">            <span class="keyword">var</span> key = <span class="keyword">this</span>.$vnode.key == <span class="literal">null</span></span><br><span class="line">              ? <span class="keyword">this</span>.$vnode.componentOptions.Ctor.cid + (<span class="keyword">this</span>.$vnode.componentOptions.tag ? <span class="string">`::<span class="subst">$&#123;<span class="keyword">this</span>.$vnode.componentOptions.tag&#125;</span>`</span> : <span class="string">''</span>)</span><br><span class="line">              : <span class="keyword">this</span>.$vnode.key</span><br><span class="line">            <span class="keyword">var</span> cache = <span class="keyword">this</span>.$vnode.parent.componentInstance.cache</span><br><span class="line">            <span class="keyword">var</span> keys = <span class="keyword">this</span>.$vnode.parent.componentInstance.keys</span><br><span class="line">            <span class="keyword">if</span> (cache[key]) &#123;</span><br><span class="line">              <span class="keyword">if</span> (keys.length) &#123;</span><br><span class="line">                <span class="keyword">var</span> index = keys.indexOf(key)</span><br><span class="line">                <span class="keyword">if</span> (index &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">                  keys.splice(index, <span class="number">1</span>)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="keyword">delete</span> cache[key] <span class="comment">// 删除内存</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">from</span>.meta.remove = <span class="literal">false</span> <span class="comment">// 这里恢复初始值.</span></span><br><span class="line">            <span class="keyword">this</span>.$destroy() <span class="comment">// 摧毁组件</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+        <p>  Js适用于移动端的点击复制（Android/IOS）<br><a id="more"></a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> copycopycopycopy <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"copyBtn"</span>&gt;</span>复制<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyArticle</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> range = <span class="built_in">document</span>.createRange();</span><br><span class="line">    range.selectNode(<span class="built_in">document</span>.getElementById(<span class="string">'content'</span>));</span><br><span class="line">    <span class="keyword">const</span> selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">    <span class="keyword">if</span> (selection.rangeCount &gt; <span class="number">0</span>) selection.removeAllRanges();</span><br><span class="line">    selection.addRange(range);</span><br><span class="line">    <span class="built_in">document</span>.execCommand(<span class="string">'copy'</span>);</span><br><span class="line">    alert(<span class="string">"复制成功！"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'copyBT'</span>).addEventListener(<span class="string">'click'</span>, <span class="keyword">this</span>.copyArticle, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>如果需要隐藏复制内容，添加<code>display：none;</code>是获取不到内容的，无法复制，可以通过设置字体颜色透明的方式<code>color：transparent</code>，然后添加定位，定位到可视区域之外。</p>
 
       
       
@@ -284,13 +282,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/01/16/Vue手动清空keepalive/">Vue手动清空keepalive</a></p>
+        <p><span>本文标题:</span><a href="/2019/02/19/copyInMobile/">Js点击复制文本</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 yifan Guo 的个人博客">yifan Guo</a></p>
-        <p><span>发布时间:</span>2019年01月16日 - 10时55分</p>
-        <p><span>最后更新:</span>2019年01月17日 - 16时15分</p>
+        <p><span>发布时间:</span>2019年02月19日 - 15时41分</p>
+        <p><span>最后更新:</span>2019年02月19日 - 15时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/01/16/Vue手动清空keepalive/" title="Vue手动清空keepalive">http://yoursite.com/2019/01/16/Vue手动清空keepalive/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/01/16/Vue手动清空keepalive/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/02/19/copyInMobile/" title="Js点击复制文本">http://yoursite.com/2019/02/19/copyInMobile/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/02/19/copyInMobile/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -303,18 +301,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/01/17/firstnode/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          This is my first blog — — hexo
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/27/肥来了/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">react常见问题汇总。</div>
+    <a href="/2019/01/30/Js之奇技淫巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript片段</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -325,7 +314,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#运用场景"><span class="toc-number">1.</span> <span class="toc-text">运用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#技术选型"><span class="toc-number">2.</span> <span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现思路"><span class="toc-number">3.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keepAlive如何手动清空"><span class="toc-number">4.</span> <span class="toc-text">keepAlive如何手动清空</span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -373,7 +362,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2019/01/16/Vue手动清空keepalive/" data-title="Vue手动清空keepalive" data-url="http://yoursite.com/2019/01/16/Vue手动清空keepalive/"></div>
+    <div class="ds-thread" data-thread-key="2019/02/19/copyInMobile/" data-title="Js点击复制文本" data-url="http://yoursite.com/2019/02/19/copyInMobile/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -396,13 +385,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/01/17/firstnode/" title="上一篇: This is my first blog — — hexo">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/11/27/肥来了/" title="下一篇: react常见问题汇总。">
+            <a href="/2019/01/30/Js之奇技淫巧/" title="下一篇: JavaScript片段">
                 <i class="fa fa-angle-right"></i>
             </a>
         

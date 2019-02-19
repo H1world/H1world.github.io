@@ -3835,6 +3835,15 @@ a.gitment-editor-footer-tip:hover {
 .article-entry .js.highlight::before {
   content: attr(data-lang) " Js";
 }
+.article-entry .html.highlight::before {
+  content: attr(data-lang) " HTML";
+}
+.article-entry .css.highlight::before {
+  content: attr(data-lang) " CSS";
+}
+.article-entry .vue.highlight::before {
+  content: attr(data-lang) " Vue";
+}
 .article-entry .highlight::before {
   content: attr(data-lang) " code";
   display: block;

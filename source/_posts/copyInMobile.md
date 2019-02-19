@@ -24,6 +24,6 @@ function copyArticle(event) {
     document.execCommand('copy');
     alert("复制成功！");
 }
-document.getElementById('copyBT').addEventListener('click', this.copyArticle, false);
+document.getElementById('copyBtn').addEventListener('click', this.copyArticle, false);
 ```
 如果需要隐藏复制内容，添加`display：none;`是获取不到内容的，无法复制，可以通过设置字体颜色透明的方式`color：transparent`，然后添加定位，定位到可视区域之外。

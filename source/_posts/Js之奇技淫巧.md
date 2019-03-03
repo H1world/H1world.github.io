@@ -48,3 +48,43 @@ const unary = fn => val => fn(val);
 // EXAMPLES
 ['1', '2', '3'].map(unary(parseInt)); // [1, 2, 3]
 ```
+### 小算法
+#### 数组内相同属性重新集合
+概述：[
+    { num: "110", name: "二" },
+    { num: "122", name: "三" },
+    { num: "113", name: "四" },
+    { num: "122", name: "五" },
+    { num: "110", name: "六" },
+] => [
+  [
+    { num: "110", name: "二" },
+    { num: "110", name: "六" },
+  ],
+  [
+    { num: "122", name: "三" },
+    { num: "122", name: "五" },
+  ],
+  [
+    { num: "113", name: "四" },
+  ],
+]
+```js
+function fun(arr){
+  var transfer = [];
+  for (var d = 0; d < arr.length; d++) {
+    transfer.push(arr[d].num);
+  }
+  var newTransfer = [...new Set(transfer)];
+  var isOver = new Array();
+  for(var i = 0; i < newTransfer.length; i++){
+    isOver[i] = new Array;
+    for(var j = 0; j < arr.length; j++){
+      if(newTransfer[i] == arr[j].domainName){
+        isOver[i].push(arr[j])
+      }
+    }
+  }
+  return isOver
+}
+```

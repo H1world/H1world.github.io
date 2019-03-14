@@ -3,20 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>JavaScript片段 | yifNote</title>
+  <title>js 长整型精度问题 | yifNote</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有意思的JavaScript">
-<meta name="keywords" content="前端,Js">
+  <meta name="description" content="js 长整型精度解决方案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript片段">
-<meta property="og:url" content="http://yoursite.com/2019/01/30/Js之奇技淫巧/index.html">
+<meta property="og:title" content="js 长整型精度问题">
+<meta property="og:url" content="http://yoursite.com/2019/03/14/js-长整型精度问题/index.html">
 <meta property="og:site_name" content="yifNote">
-<meta property="og:description" content="有意思的JavaScript">
+<meta property="og:description" content="js 长整型精度解决方案">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-03T13:12:16.430Z">
+<meta property="og:updated_time" content="2019-03-14T05:12:27.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript片段">
-<meta name="twitter:description" content="有意思的JavaScript">
+<meta name="twitter:title" content="js 长整型精度问题">
+<meta name="twitter:description" content="js 长整型精度解决方案">
   
     <link rel="alternative" href="/atom.xml" title="yifNote" type="application/atom+xml">
   
@@ -182,11 +181,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Js之奇技淫巧" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js-长整型精度问题" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/01/30/Js之奇技淫巧/" class="article-date">
-      <time datetime="2019-01-30T02:05:23.000Z" itemprop="datePublished">2019-01-30</time>
+      <a href="/2019/03/14/js-长整型精度问题/" class="article-date">
+      <time datetime="2019-03-14T03:52:59.000Z" itemprop="datePublished">2019-03-14</time>
 </a>
     </div>
   
@@ -199,7 +198,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript片段
+      js 长整型精度问题
     </h1>
   
 
@@ -207,16 +206,8 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-    </div>
-
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -224,14 +215,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>  有意思的JavaScript<br><a id="more"></a></p>
-<h3 id="片段一：unary"><a href="#片段一：unary" class="headerlink" title="片段一：unary"></a>片段一：unary</h3><p>控制台执行以下Js代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>];</span><br><span class="line">arr.map(<span class="built_in">parseInt</span>);   <span class="comment">//[1,NaN,NaN]</span></span><br></pre></td></tr></table></figure></p>
-<p>下面讲讲为什么返回的不是[1,2,3]<br>细化以下以上代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.map(<span class="function">(<span class="params">value,index,array</span>)=&gt;</span><span class="built_in">parseInt</span>(value,index));</span><br></pre></td></tr></table></figure></p>
-<h4 id="map函数传递参数的定义"><a href="#map函数传递参数的定义" class="headerlink" title="map函数传递参数的定义"></a>map函数传递参数的定义</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">arr.map(callback[,thisArg]);</span><br><span class="line"><span class="comment">// map参数</span></span><br><span class="line">callback</span><br><span class="line">原数组中的元素经过该方法后返回一个新的元素。</span><br><span class="line">currentValue </span><br><span class="line">     callback的第一个参数，数组中当前被传递的元素。</span><br><span class="line">index</span><br><span class="line">     callback的第二个参数，数组中当前被传递的元素的索引。</span><br><span class="line">array</span><br><span class="line">     callback的第三个参数，调用 map 方法的数组。</span><br><span class="line">thisArg可选.  callback函数里的<span class="keyword">this</span>值 默认是<span class="built_in">window</span>对象</span><br></pre></td></tr></table></figure>
-<h4 id="parseInt函数定义"><a href="#parseInt函数定义" class="headerlink" title="parseInt函数定义"></a>parseInt函数定义</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(string, radix);</span><br><span class="line"><span class="comment">// parseInt参数</span></span><br><span class="line">string: 需要转化的字符，如果不是字符串会被转换，忽视空格符。</span><br><span class="line">radix：数字<span class="number">2</span><span class="number">-36</span>之前的整型。默认使用<span class="number">10</span>，表示十进制。</span><br><span class="line">需要注意的是，如果radix在<span class="number">2</span><span class="number">-36</span>之外会返回<span class="literal">NaN</span>。而且字符串string中的数字不能大于radix才能正确返回数字结果值。</span><br></pre></td></tr></table></figure>
-<p>因为parseInt函数接收2个参数，string，radix，如果map函数返回了这两个参数，不管意义是否是所期望的，都会将其作为参数执行。map的回调函数的参数index索引值作了parseInt的基数radix，导致出现超范围的radix赋值和不合法的进制解析，才会返回NaN。</p>
-<h4 id="解决技巧"><a href="#解决技巧" class="headerlink" title="解决技巧"></a>解决技巧</h4><p>创建一个只接受一个参数的函数，忽略任何其他参数。<br>调用提供的函数fn，只传入一个参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> unary = <span class="function"><span class="params">fn</span> =&gt;</span> val =&gt; fn(val);</span><br><span class="line"><span class="comment">// EXAMPLES</span></span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>].map(unary(<span class="built_in">parseInt</span>)); <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="小算法"><a href="#小算法" class="headerlink" title="小算法"></a>小算法</h3><h4 id="数组内相同属性重新集合"><a href="#数组内相同属性重新集合" class="headerlink" title="数组内相同属性重新集合"></a>数组内相同属性重新集合</h4><p>概述：[<br>    { num: “110”, name: “二” },<br>    { num: “122”, name: “三” },<br>    { num: “113”, name: “四” },<br>    { num: “122”, name: “五” },<br>    { num: “110”, name: “六” },<br>] =&gt; [<br>  [<br>    { num: “110”, name: “二” },<br>    { num: “110”, name: “六” },<br>  ],<br>  [<br>    { num: “122”, name: “三” },<br>    { num: “122”, name: “五” },<br>  ],<br>  [<br>    { num: “113”, name: “四” },<br>  ],<br>]<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> transfer = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> d = <span class="number">0</span>; d &lt; arr.length; d++) &#123;</span><br><span class="line">    transfer.push(arr[d].num);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> newTransfer = [...new <span class="built_in">Set</span>(transfer)];</span><br><span class="line">  <span class="keyword">var</span> isOver = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; newTransfer.length; i++)&#123;</span><br><span class="line">    isOver[i] = <span class="keyword">new</span> <span class="built_in">Array</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(newTransfer[i] == arr[j].domainName)&#123;</span><br><span class="line">        isOver[i].push(arr[j])</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isOver</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>  js 长整型精度解决方案<br><a id="more"></a></p>
+<h3 id="JS-长整型精度问题"><a href="#JS-长整型精度问题" class="headerlink" title="JS 长整型精度问题"></a>JS 长整型精度问题</h3><p>JS接收长整型的值大于15位之后，会出现混乱问题。通常不会遇到这种问题，除非后台搞事情。</p>
+<h4 id="解决方案（比较消耗性能）：通过正则对response中大于15位数字做处理。"><a href="#解决方案（比较消耗性能）：通过正则对response中大于15位数字做处理。" class="headerlink" title="解决方案（比较消耗性能）：通过正则对response中大于15位数字做处理。"></a>解决方案（比较消耗性能）：通过正则对response中大于15位数字做处理。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">langForString</span>(<span class="params">data</span>) </span>&#123; <span class="comment">// lang类型转换string</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(data.replace(<span class="regexp">/(\\?["])[ ]*[:][ ]*(\d&#123;15,&#125;)/g</span>, <span class="string">'$1:$1$2$1'</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以fetch为例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码片段</span></span><br><span class="line">  <span class="keyword">const</span> responseData =  fetch(url, initObj).then(<span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> data.text()</span><br><span class="line">  &#125;).then(<span class="function">(<span class="params">dataStr</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(langForString(dataStr)) <span class="comment">// 最终json数据</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></p>
 
       
       
@@ -287,13 +274,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/01/30/Js之奇技淫巧/">JavaScript片段</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/14/js-长整型精度问题/">js 长整型精度问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 yifan Guo 的个人博客">yifan Guo</a></p>
-        <p><span>发布时间:</span>2019年01月30日 - 10时05分</p>
-        <p><span>最后更新:</span>2019年03月03日 - 21时12分</p>
+        <p><span>发布时间:</span>2019年03月14日 - 11时52分</p>
+        <p><span>最后更新:</span>2019年03月14日 - 13时12分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/01/30/Js之奇技淫巧/" title="JavaScript片段">http://yoursite.com/2019/01/30/Js之奇技淫巧/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/01/30/Js之奇技淫巧/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/14/js-长整型精度问题/" title="js 长整型精度问题">http://yoursite.com/2019/03/14/js-长整型精度问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/03/14/js-长整型精度问题/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -306,18 +293,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/02/19/copyInMobile/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Js点击复制文本
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/17/firstnode/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">This is my first blog — — hexo</div>
+    <a href="/2019/02/19/copyInMobile/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Js点击复制文本</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -328,7 +306,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#片段一：unary"><span class="toc-number">1.</span> <span class="toc-text">片段一：unary</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#map函数传递参数的定义"><span class="toc-number">1.1.</span> <span class="toc-text">map函数传递参数的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#parseInt函数定义"><span class="toc-number">1.2.</span> <span class="toc-text">parseInt函数定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决技巧"><span class="toc-number">1.3.</span> <span class="toc-text">解决技巧</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小算法"><span class="toc-number">2.</span> <span class="toc-text">小算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组内相同属性重新集合"><span class="toc-number">2.1.</span> <span class="toc-text">数组内相同属性重新集合</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-长整型精度问题"><span class="toc-number">1.</span> <span class="toc-text">JS 长整型精度问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解决方案（比较消耗性能）：通过正则对response中大于15位数字做处理。"><span class="toc-number">1.1.</span> <span class="toc-text">解决方案（比较消耗性能）：通过正则对response中大于15位数字做处理。</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -376,7 +354,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2019/01/30/Js之奇技淫巧/" data-title="JavaScript片段" data-url="http://yoursite.com/2019/01/30/Js之奇技淫巧/"></div>
+    <div class="ds-thread" data-thread-key="2019/03/14/js-长整型精度问题/" data-title="js 长整型精度问题" data-url="http://yoursite.com/2019/03/14/js-长整型精度问题/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -399,13 +377,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/19/copyInMobile/" title="上一篇: Js点击复制文本">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/01/17/firstnode/" title="下一篇: This is my first blog — — hexo">
+            <a href="/2019/02/19/copyInMobile/" title="下一篇: Js点击复制文本">
                 <i class="fa fa-angle-right"></i>
             </a>
         

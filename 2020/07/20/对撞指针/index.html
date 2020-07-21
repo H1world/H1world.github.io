@@ -6,14 +6,14 @@
   <title>对撞指针 | yifNote</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="叮叮叮">
-<meta name="keywords" content="Js">
+<meta name="keywords" content="Js,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对撞指针">
 <meta property="og:url" content="http://yoursite.com/2020/07/20/对撞指针/index.html">
 <meta property="og:site_name" content="yifNote">
 <meta property="og:description" content="叮叮叮">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-20T06:09:25.744Z">
+<meta property="og:updated_time" content="2020-07-21T11:09:16.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对撞指针">
 <meta name="twitter:description" content="叮叮叮">
@@ -126,7 +126,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Flutter/" style="font-size: 10px;">Flutter</a> <a href="/tags/Js/" style="font-size: 16.67px;">Js</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/dart/" style="font-size: 10px;">dart</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/常见问题/" style="font-size: 10px;">常见问题</a>
+                        <a href="/tags/Flutter/" style="font-size: 10px;">Flutter</a> <a href="/tags/Js/" style="font-size: 16.67px;">Js</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/dart/" style="font-size: 10px;">dart</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/react/" style="font-size: 13.33px;">react</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/常见问题/" style="font-size: 10px;">常见问题</a> <a href="/tags/算法/" style="font-size: 13.33px;">算法</a>
                     </div>
                 </section>
                 
@@ -214,7 +214,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -226,7 +226,7 @@
           
         <p>叮叮叮<br><a id="more"></a></p>
 <h3 id="对撞指针"><a href="#对撞指针" class="headerlink" title="对撞指针"></a>对撞指针</h3><p>简单的例子：数组[2,7,11,15],找出arr[i]相加等于target = 9 的下标 =&gt; [0,1]<br>方法：左右两个指针left和right从最外扩一级一级指向内部从而找到目标。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params">numbers, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> len=numbers.length</span><br><span class="line">  <span class="keyword">if</span>(len&lt;<span class="number">2</span>) <span class="keyword">return</span> []</span><br><span class="line">  <span class="keyword">let</span> left=<span class="number">0</span>;           <span class="comment">// 最左指针</span></span><br><span class="line">  <span class="keyword">let</span> right=len<span class="number">-1</span>;      <span class="comment">// 最右指针</span></span><br><span class="line">  <span class="keyword">while</span>(left&lt;right)&#123;    <span class="comment">// 递归使不符合条件的指针向前/向后</span></span><br><span class="line">      <span class="keyword">if</span>(numbers[left]+numbers[right]===target)&#123;</span><br><span class="line">          <span class="keyword">return</span> [left+<span class="number">1</span>,right+<span class="number">1</span>]</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(numbers[left]+numbers[right]&lt;target)&#123;</span><br><span class="line">          left++</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          right--</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> []</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params">numbers, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> len=numbers.length</span><br><span class="line">  <span class="keyword">if</span>(len&lt;<span class="number">2</span>) <span class="keyword">return</span> []</span><br><span class="line">  <span class="keyword">let</span> left=<span class="number">0</span>;           <span class="comment">// 最左指针</span></span><br><span class="line">  <span class="keyword">let</span> right=len<span class="number">-1</span>;      <span class="comment">// 最右指针</span></span><br><span class="line">  <span class="keyword">while</span>(left&lt;right)&#123;    <span class="comment">// 递归使不符合条件的指针向前/向后</span></span><br><span class="line">      <span class="keyword">if</span>(numbers[left]+numbers[right]===target)&#123;</span><br><span class="line">          <span class="keyword">return</span> [left+<span class="number">1</span>,right+<span class="number">1</span>]</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span>(numbers[left]+numbers[right]&lt;target)&#123;</span><br><span class="line">          left++</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          right--</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> []</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
       
         <div class="page-reward">
@@ -284,7 +284,7 @@
         <p><span>本文标题:</span><a href="/2020/07/20/对撞指针/">对撞指针</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 yifan Guo 的个人博客">yifan Guo</a></p>
         <p><span>发布时间:</span>2020年07月20日 - 11时06分</p>
-        <p><span>最后更新:</span>2020年07月20日 - 14时09分</p>
+        <p><span>最后更新:</span>2020年07月21日 - 19时09分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/07/20/对撞指针/" title="对撞指针">http://yoursite.com/2020/07/20/对撞指针/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2020/07/20/对撞指针/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -299,6 +299,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/07/21/不同的二叉搜索树/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          不同的二叉搜索树
+        
+      </div>
+    </a>
   
   
     <a href="/2019/10/23/Flutter/" id="article-nav-older" class="article-nav-link-wrap">
@@ -384,7 +393,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2020/07/21/不同的二叉搜索树/" title="上一篇: 不同的二叉搜索树">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -393,7 +404,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/07/20/对撞指针/">对撞指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/23/Flutter/">Flutter入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/16/强制刷新/">强制刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/14/js-长整型精度问题/">js 长整型精度问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/copyInMobile/">Js点击复制文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/30/Js之奇技淫巧/">JavaScript片段</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/firstnode/">This is my first blog — — hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/16/Vue手动清空keepalive/">Vue手动清空keepalive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/27/肥来了/">react常见问题汇总。</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/07/21/不同的二叉搜索树/">不同的二叉搜索树</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/20/对撞指针/">对撞指针</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/23/Flutter/">Flutter入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/16/强制刷新/">强制刷新</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/14/js-长整型精度问题/">js 长整型精度问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/copyInMobile/">Js点击复制文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/30/Js之奇技淫巧/">JavaScript片段</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/17/firstnode/">This is my first blog — — hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/16/Vue手动清空keepalive/">Vue手动清空keepalive</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/27/肥来了/">react常见问题汇总。</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

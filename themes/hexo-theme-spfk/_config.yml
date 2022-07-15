@@ -13,10 +13,10 @@ menu:
 # 随笔: /tags/随笔
 
 # Link to your avatar | 填写头像地址
-avatar: img/tophead.jpg
+avatar: source/img/tophead.jpg
 
 # Small icon of Your site | 站点小图标地址
-favicon: img/favicon.ico
+favicon: source/img/favicon.ico
 
 # Social info. Bar | 社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
@@ -141,9 +141,9 @@ reward_type: 2
 reward_wording1: '纯属好玩'
 reward_wording2: '扫码打赏，你说多少就多少'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/img/alipay.jpg
-alipay: /img/alipay.png
+alipay: source/img/alipay.png
 # 微信二维码图片地址
-weixin: /img/weixin.png
+weixin: source/img/weixin.png
 
 #是否开启“关于我”。
 # aboutme: 逐渐膨胀的肥肥

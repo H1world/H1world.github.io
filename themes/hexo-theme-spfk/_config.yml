@@ -118,7 +118,7 @@ excerpt_link: 肥肥 #修改more>>的文字
 
 # 是否开启主页及加载头像时的动画效果
 # Animation in Homepage and Loading avatar
-animate: true
+animate: false
 
 
 # >>> Small features | 小功能设置 <<<

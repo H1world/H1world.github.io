@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>深拷贝 | yifNote</title>
+  <title>对称二叉树 | yifNote</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面试记录">
-<meta name="keywords" content="Js,面试">
+  <meta name="description" content="请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。">
+<meta name="keywords" content="Js,算法,数据结构,数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深拷贝">
-<meta property="og:url" content="https://h1world.github.io/2021/06/16/深拷贝/index.html">
+<meta property="og:title" content="对称二叉树">
+<meta property="og:url" content="https://h1world.github.io/2022/07/19/对称二叉树/index.html">
 <meta property="og:site_name" content="yifNote">
-<meta property="og:description" content="面试记录">
+<meta property="og:description" content="请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-06-16T11:01:43.005Z">
+<meta property="og:updated_time" content="2022-07-19T09:38:58.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深拷贝">
-<meta name="twitter:description" content="面试记录">
+<meta name="twitter:title" content="对称二叉树">
+<meta name="twitter:description" content="请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。">
   
     <link rel="alternative" href="/atom.xml" title="yifNote" type="application/atom+xml">
   
@@ -182,11 +182,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-深拷贝" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-对称二叉树" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/06/16/深拷贝/" class="article-date">
-      <time datetime="2021-06-16T10:55:46.582Z" itemprop="datePublished">2021-06-16</time>
+      <a href="/2022/07/19/对称二叉树/" class="article-date">
+      <time datetime="2022-07-19T09:34:18.032Z" itemprop="datePublished">2022-07-19</time>
 </a>
     </div>
   
@@ -199,7 +199,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深拷贝
+      对称二叉树
     </h1>
   
 
@@ -214,7 +214,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Js/">Js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数/">数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -224,9 +224,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>面试记录<br><a id="more"></a></p>
-<h3 id="对象深拷贝"><a href="#对象深拷贝" class="headerlink" title="对象深拷贝"></a>对象深拷贝</h3><p>对象深拷贝 - 递归<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> resoult;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Array</span>.isArray(obj))&#123;</span><br><span class="line">      resoult = [];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        resoult.push(copy(obj[i]))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(obj === <span class="literal">null</span>) &#123;</span><br><span class="line">      resoult = <span class="literal">null</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(obj.constructor === <span class="built_in">RegExp</span>) &#123;</span><br><span class="line">      resoult = obj</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      resoult = &#123;&#125;;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        resoult[i] = copy(obj[i])</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    resoult = obj</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> resoult</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">      a: &#123;</span><br><span class="line">          c: <span class="regexp">/a/</span>,</span><br><span class="line">          d: <span class="literal">undefined</span>,</span><br><span class="line">          b: <span class="literal">null</span></span><br><span class="line">      &#125;,</span><br><span class="line">      b: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">      &#125;,</span><br><span class="line">      c: [</span><br><span class="line">          &#123;</span><br><span class="line">              a: <span class="string">'c'</span>,</span><br><span class="line">              b: <span class="regexp">/b/</span>,</span><br><span class="line">              c: <span class="literal">undefined</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">'a'</span>,</span><br><span class="line">          <span class="number">3</span></span><br><span class="line">      ]</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">let</span> obj2 = copy(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj2);</span><br></pre></td></tr></table></figure>
+        <p>请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。<br><a id="more"></a></p>
+<h3 id="对称二叉树"><a href="#对称二叉树" class="headerlink" title="对称二叉树"></a>对称二叉树</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     val: number</span></span><br><span class="line"><span class="comment"> *     left: TreeNode | null</span></span><br><span class="line"><span class="comment"> *     right: TreeNode | null</span></span><br><span class="line"><span class="comment"> *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *         this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *         this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">isSymmetric</span>(<span class="params">root: TreeNode | null</span>): <span class="title">boolean</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> imageFn(root, root) <span class="comment">// 传入两次并且递归对比</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">imageFn</span>(<span class="params">l: TreeNode | null, r: TreeNode | null</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!l &amp;&amp; !r) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="keyword">if</span>(!l || !r) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> l.val == r.val &amp;&amp; imageFn(l.left, r.right) &amp;&amp; imageFn(l.right, r.left)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
       
         <!-- <div class="page-reward">
@@ -271,13 +270,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2021/06/16/深拷贝/">深拷贝</a></p>
+        <p><span>本文标题:</span><a href="/2022/07/19/对称二叉树/">对称二叉树</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 yifan Guo 的个人博客">yifan Guo</a></p>
-        <p><span>发布时间:</span>2021年06月16日 - 18时55分</p>
-        <p><span>最后更新:</span>2021年06月16日 - 19时01分</p>
+        <p><span>发布时间:</span>2022年07月19日 - 17时34分</p>
+        <p><span>最后更新:</span>2022年07月19日 - 17时38分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2021/06/16/深拷贝/" title="深拷贝">https://h1world.github.io/2021/06/16/深拷贝/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://h1world.github.io/2021/06/16/深拷贝/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2022/07/19/对称二叉树/" title="对称二叉树">https://h1world.github.io/2022/07/19/对称二叉树/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://h1world.github.io/2022/07/19/对称二叉树/　　作者: yifan Guo" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -290,18 +289,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/06/08/EventBus/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          发布订阅
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/06/01/排序算法总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序</div>
+    <a href="/2022/07/18/平衡二叉树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">平衡二叉树</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -312,7 +302,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象深拷贝"><span class="toc-number">1.</span> <span class="toc-text">对象深拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-number">2.</span> <span class="toc-text">测试</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#对称二叉树"><span class="toc-number">1.</span> <span class="toc-text">对称二叉树</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -360,7 +350,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2021/06/16/深拷贝/" data-title="深拷贝" data-url="https://h1world.github.io/2021/06/16/深拷贝/"></div>
+    <div class="ds-thread" data-thread-key="2022/07/19/对称二叉树/" data-title="对称二叉树" data-url="https://h1world.github.io/2022/07/19/对称二叉树/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -383,13 +373,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2022/06/08/EventBus/" title="上一篇: 发布订阅">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2021/06/01/排序算法总结/" title="下一篇: 排序">
+            <a href="/2022/07/18/平衡二叉树/" title="下一篇: 平衡二叉树">
                 <i class="fa fa-angle-right"></i>
             </a>
         
